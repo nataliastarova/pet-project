@@ -12,7 +12,7 @@ const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader
 
 
 const config = {
-    entry: './src/index.ts',
+    entry: './src/index.tsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
         publicPath: isProduction ? '' : '/',
@@ -25,7 +25,7 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-          template: 'index.tsx.html',
+          template: 'index.html',
         }),
 
         // Add your plugins here
@@ -43,11 +43,18 @@ const config = {
                 use: [stylesHandler, 'css-loader', 'postcss-loader'],
             },
             {
-                test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+                test: /\.(eot|ttf|woff|woff2|png|jpg|gif)$/i,
                 type: 'asset',
             },
+            {
+              test: /\.svg$/,
+              use: {
+                loader: 'svg-sprite-loader',
+                options: { name: '[name].[ext]' },
+              },
+            }
 
-            // Add your rules for custom modules here
+          // Add your rules for custom modules here
             // Learn more about loaders from https://webpack.js.org/loaders/
         ],
     },
