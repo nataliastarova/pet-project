@@ -1,9 +1,26 @@
 .header {
-  background-color: #24292f;
-  color: #f05a3c;
-  fill: #f05a3c;
+  color: var(--color-coral);
+  font-weight: bold;
+  padding: 25px 50px;
 }
 
 .header > header {
   box-shadow: none;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.title > a {
+  padding-right: 50px;
+  font-family: var(--font-poppins);
+}
+
+.title:first-child {
+  margin-right: 50px;
+}
+
+.section {
+  fill: var(--color-coral);
+  display: inline-block;
 }
