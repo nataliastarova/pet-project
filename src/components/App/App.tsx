@@ -1,21 +1,26 @@
-import React from "react";
+import React from 'react';
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { MainPage } from "../../pages/MainPage/MainPage";
-import { Header } from "../Header/Header";
+import Header from '../Header';
 
-import { MAIN_PAGE_ROUTE } from "../../constants/routes";
+import './App.pcss';
+import { IRoute, IView } from '../../types/common';
+import Router from '../../router';
 
-import "./App.pcss";
+const getPages = (): React.ReactElement[] =>
+  Router.map(({ route, component }: IRoute) => {
+    const Component: React.FC<IView> = component;
+    const link: string = Array.isArray(route) ? route[0] : route;
+
+    return <Route path={link} key={link} element={<Component />} />;
+  });
 
 export const App = () => {
   return (
     <BrowserRouter basename="/">
       <Header />
-      <Routes>
-        <Route path={MAIN_PAGE_ROUTE} element={<MainPage />} />
-      </Routes>
+      <Routes>{getPages()}</Routes>
     </BrowserRouter>
   );
 };

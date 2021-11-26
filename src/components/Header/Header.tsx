@@ -1,32 +1,48 @@
-import React from "react";
-import "./Header.pcss";
-import { AppBar, Link, Typography } from "@mui/material";
-import { Svg } from "../Svg/Svg";
-import { ISvgFile } from "../Svg";
+import React from 'react';
 
-const logo = require("../../assets/icons/location.svg") as ISvgFile;
+import './Header.pcss';
+import { AppBar, Link, Typography } from '@mui/material';
+import Svg from '../Svg';
+import RoutesPage from '../../constants/routes';
+
+const logo = require('../../assets/icons/location.svg');
 
 export const Header = () => {
   return (
-    <div className={"header"}>
-      <AppBar color="transparent" position="static">
-        <Typography variant="h6" className={"title"} paragraph={true}>
-          <Link href="#" color="inherit" variant="inherit" underline="none">
-            <div className={"section"}>
-              <Svg file={logo} />
-            </div>
-            <span>оdaerjay</span>
-          </Link>
-        </Typography>
-        <Typography variant="subtitle1" className={"title"} paragraph={true}>
-          <Link href="#" color="inherit" variant="inherit" underline="hover">
-            иллюстрации
-          </Link>
-          <Link href="#" color="inherit" variant="inherit" underline="hover">
-            кофейная карта
-          </Link>
-        </Typography>
-      </AppBar>
-    </div>
+    <AppBar color="transparent" position="static" id="header">
+      <Typography variant="h6" className={'title'} paragraph={true}>
+        <Link
+          href={RoutesPage.main}
+          color="inherit"
+          variant="inherit"
+          underline="none"
+        >
+          <div className={'section'}>
+            <Svg file={logo} />
+          </div>
+          <span>оdaerjay</span>
+        </Link>
+      </Typography>
+      <Typography variant="subtitle1" className={'title'} paragraph={true}>
+        <Link
+          href={RoutesPage.error}
+          color="inherit"
+          variant="inherit"
+          underline="none"
+          className={'nav-link'}
+        >
+          иллюстрации
+        </Link>
+        <Link
+          href={RoutesPage.error}
+          color="inherit"
+          variant="inherit"
+          underline="none"
+          className={'nav-link'}
+        >
+          кофейная карта
+        </Link>
+      </Typography>
+    </AppBar>
   );
 };

@@ -1,9 +1,9 @@
-import { Svg } from "./Svg";
+import { Svg } from './Svg';
 
 export interface ISvgFile {
   default: {
-    viewBox: string;
-    id: string;
+    viewBox: string,
+    id: string,
   };
 }
 

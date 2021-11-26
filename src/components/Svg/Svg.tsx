@@ -1,5 +1,5 @@
-import React from "react";
-import { ISvgFile } from "./index";
+import React from 'react';
+import { ISvgFile } from './index';
 
 interface IProps {
   file: ISvgFile;
