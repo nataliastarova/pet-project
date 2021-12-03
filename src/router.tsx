@@ -1,7 +1,10 @@
 import * as React from 'react';
+
 import RoutesPage from './constants/routes';
-import MainPage from './pages/MainPage';
+
 import ErrorPage from './pages/ErrorPage';
+import MainPage from './pages/MainPage';
+import IllustrationsPage from './pages/lllustrationsPage';
 
 import { IRoute } from './types/common';
 
@@ -16,7 +19,7 @@ const Router: IRoute[] = [
   },
   {
     route: RoutesPage.illustrations,
-    component: ErrorPage,
+    component: IllustrationsPage,
   },
   {
     route: RoutesPage.map,

@@ -25,7 +25,7 @@ export const Header = () => {
       </Typography>
       <Typography variant="subtitle1" className={'title'} paragraph={true}>
         <Link
-          href={RoutesPage.error}
+          href={RoutesPage.illustrations}
           color="inherit"
           variant="inherit"
           underline="none"

@@ -1,0 +1,20 @@
+.page-wrapper {
+  height: inherit;
+}
+
+.pagination {
+  padding: 50px 0 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pagination-active > li > button[aria-current="true"] {
+  background-color: var(--color-coral);
+  opacity: 1;
+}
+
+.pagination-active > li > button:hover,
+.pagination-active > li > button:focus {
+  background-color: var(--color-coral);
+  opacity: 0.7;
+}
