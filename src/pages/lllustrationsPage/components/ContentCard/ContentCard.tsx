@@ -13,8 +13,8 @@ export const ContentCard = (props: IProps) => {
 
   return (
     <Card raised>
-      <CardMedia className={'card'} image={src} />
-      <CardContent>{text}</CardContent>
+      <CardMedia className={'card'} image={src} src={src} />
+      <CardContent className={'card-title'}>{text}</CardContent>
     </Card>
   );
 };
